@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grant-X — Student Innovation Grant & Patent Idea Filing Portal. Submit proposals, undergo faculty evaluation, track grant approvals and project milestones.">
+  <title>Grant-X | Student Innovation Grant & Patent Idea Filing Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+</head>
+<body>
+
+<!-- ============================================================
+     TOAST CONTAINER
+     ============================================================ -->
+<div id="toast-container"></div>
+
+<!-- ============================================================
+     LOADING OVERLAY
+     ============================================================ -->
+<div class="loading-overlay hidden" id="loading-overlay">
+  <div class="spinner"></div>
+  <div class="loading-text" id="loading-text">Loading...</div>
+</div>
+
+<!-- ============================================================
+     PAGE: LANDING
+     ============================================================ -->
+<div class="page active" id="page-landing">
+  <nav class="landing-nav">
+    <div class="landing-logo">
+      <div class="logo-icon">🎯</div>
+      <div>
+        <div class="logo-text">Grant-X</div>
+        <div class="logo-subtitle">Innovation Grant Portal</div>
+      </div>
+    </div>
+    <div class="landing-nav-links">
+      <button class="btn-nav-login" onclick="showPage('page-login')">Login →</button>
+    </div>
+  </nav>
+
+  <section class="landing-hero">
+    <div class="hero-badge">🏫 AIHT | CSBS Department | Team CSBS-G11</div>
+    <h1 class="hero-title">
+      Student Innovation<br><span>Grant & Patent</span><br>Filing Portal
+    </h1>
+    <p class="hero-subtitle">
+      A comprehensive digital platform for students to submit innovative project proposals, undergo structured faculty evaluation, and track grant approvals and project milestones.
+    </p>
+    <div class="hero-cta">
+      <button class="btn-hero-primary" onclick="showPage('page-login')">🚀 Get Started</button>
+      <button class="btn-hero-secondary" onclick="document.getElementById('workflow-section').scrollIntoView({behavior:'smooth'})">Learn How It Works ↓</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">User Roles</div></div>
+      <div class="stat-item"><div class="stat-number">16</div><div class="stat-label">Status Stages</div></div>
+      <div class="stat-item"><div class="stat-number">2</div><div class="stat-label">Evaluators/Proposal</div></div>
+      <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Digital Workflow</div></div>
+    </div>
+  </section>
+
+  <section class="landing-section" id="workflow-section" style="background: rgba(79,70,229,0.03); border-top: 1px solid var(--border);">
+    <div class="section-header">
+      <div class="section-tag">How It Works</div>
+      <h2 class="section-title">End-to-End Grant Workflow</h2>
+      <p class="section-desc">From idea to funded project in a fully structured, transparent process.</p>
+    </div>
+    <div class="workflow-container">
+      <div class="workflow-steps">
+        <div class="workflow-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <div class="step-title">Student Submits Proposal</div>
+            <div class="step-desc">Student completes a 5-step wizard covering team details, innovation description, novelty assessment, patent potential, and detailed budget breakdown.</div>
+          </div>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <div class="step-title">R&D Cell Initial Processing</div>
+            <div class="step-desc">The R&D Committee reviews the submission and assigns exactly two independent faculty evaluators with deadlines.</div>
+          </div>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <div class="step-title">Independent Faculty Evaluation</div>
+            <div class="step-desc">Both evaluators independently score the proposal on Novelty (40%), Feasibility (30%), and Commercial Impact (30%), providing detailed comments and recommendations.</div>
+          </div>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <div class="step-title">Automatic Score Aggregation</div>
+            <div class="step-desc">The system automatically calculates each evaluator's weighted score and aggregates both scores into a final score out of 10.</div>
+          </div>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <div class="step-title">R&D Grant Decision</div>
+            <div class="step-desc">The committee reviews all evaluation data and makes a formal decision: Approve, Reject, or Request Revision with documented rationale.</div>
+          </div>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <div class="step-title">Grant Sanction & Milestone Tracking</div>
+            <div class="step-desc">Approved projects receive sanctioned funding and milestone tracking. Students can monitor progress through their dashboard in real-time.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-section">
+    <div class="section-header">
+      <div class="section-tag">Features</div>
+      <h2 class="section-title">Built for Every Stakeholder</h2>
+      <p class="section-desc">Purpose-built tools for students, evaluators, and the R&D Committee.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon blue">📋</div>
+        <div class="feature-title">5-Step Submission Wizard</div>
+        <div class="feature-desc">Guided multi-step form ensuring students provide all required information including team details, proposal content, novelty assessment, and budget.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon purple">👁️</div>
+        <div class="feature-title">Blinded Peer Review</div>
+        <div class="feature-desc">Evaluators review independently. Neither evaluator can see the other's private review while evaluation is ongoing — ensuring unbiased assessment.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon green">🧮</div>
+        <div class="feature-title">Automatic Score Calculation</div>
+        <div class="feature-desc">Backend calculates weighted scores (Novelty 40%, Feasibility 30%, Commercial Impact 30%) and aggregates both evaluator scores automatically.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon orange">📊</div>
+        <div class="feature-title">Real-Time Tracking</div>
+        <div class="feature-desc">Visual workflow tracker shows students exactly where their proposal is in the 16-stage lifecycle from DRAFT to COMPLETED.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon pink">🎯</div>
+        <div class="feature-title">Milestone Management</div>
+        <div class="feature-desc">R&D Cell creates and manages project milestones for approved grants. Students can monitor completion progress visually.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon cyan">🔔</div>
+        <div class="feature-title">Smart Notifications</div>
+        <div class="feature-desc">Database-backed notifications keep all parties informed at every key workflow event — submission, assignment, evaluation, decisions, and milestones.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-section" style="background: rgba(14,165,233,0.03); border-top: 1px solid var(--border);">
+    <div class="section-header">
+      <div class="section-tag">User Roles</div>
+      <h2 class="section-title">Three Role System</h2>
+      <p class="section-desc">Each role has specific capabilities enforced at the backend level.</p>
+    </div>
+    <div class="roles-grid">
+      <div class="role-card">
+        <div class="role-avatar student">🎓</div>
+        <div class="role-name">Student</div>
+        <div style="font-size:13px;color:var(--text-muted);">Submit and track innovation proposals</div>
+        <div class="role-perms">
+          <div class="perm-item">Submit innovation proposals</div>
+          <div class="perm-item">Save drafts and edit before submission</div>
+          <div class="perm-item">Track proposal status in real-time</div>
+          <div class="perm-item">View evaluation progress</div>
+          <div class="perm-item">Monitor grant and milestones</div>
+          <div class="perm-item">Receive workflow notifications</div>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-avatar faculty">👨‍🏫</div>
+        <div class="role-name">Faculty Evaluator</div>
+        <div style="font-size:13px;color:var(--text-muted);">Evaluate assigned proposals</div>
+        <div class="role-perms">
+          <div class="perm-item">View only assigned proposals</div>
+          <div class="perm-item">Score on 3 criteria (0–10 each)</div>
+          <div class="perm-item">Provide detailed written review</div>
+          <div class="perm-item">Submit recommendation</div>
+          <div class="perm-item">Reviews locked after submission</div>
+          <div class="perm-item">Independent of other evaluator</div>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-avatar admin">🏛️</div>
+        <div class="role-name">R&D Cell / Admin</div>
+        <div style="font-size:13px;color:var(--text-muted);">Manage the complete workflow</div>
+        <div class="role-perms">
+          <div class="perm-item">View and manage all proposals</div>
+          <div class="perm-item">Assign exactly two evaluators</div>
+          <div class="perm-item">Monitor review progress</div>
+          <div class="perm-item">View aggregated scores</div>
+          <div class="perm-item">Make grant decisions</div>
+          <div class="perm-item">Manage milestones and funding</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-cta">
+    <h2 style="font-size:2rem;font-weight:800;margin-bottom:16px;">Ready to Submit Your Innovation?</h2>
+    <p style="color:var(--text-secondary);margin-bottom:32px;font-size:1.05rem;">Join the Grant-X platform and get your research idea evaluated and funded.</p>
+    <button class="btn-hero-primary" onclick="showPage('page-login')">Login to Grant-X →</button>
+  </section>
+
+  <footer class="landing-footer">
+    <p>© 2024 Grant-X | Student Innovation Grant & Patent Idea Filing Portal | AIHT | CSBS Department | Team CSBS-G11</p>
+    <p style="margin-top:4px;">M. Vedhpuri | V. Vinith | V. Vinitha | Santosh | T. Yuvaraj</p>
+  </footer>
+</div>
+
+<!-- ============================================================
+     PAGE: LOGIN
+     ============================================================ -->
+<div class="page" id="page-login">
+  <div class="login-page">
+    <div class="login-container">
+      <div class="login-card">
+        <div class="login-logo">
+          <div class="login-logo-icon">🎯</div>
+          <div class="login-title">Grant-X</div>
+          <div class="login-subtitle">Student Innovation Grant & Patent Filing Portal</div>
+        </div>
+
+        <form id="login-form" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label class="form-label">Username <span class="required">*</span></label>
+            <div class="input-icon-wrap">
+              <span class="input-icon">👤</span>
+              <input type="text" id="login-username" class="form-control" placeholder="Enter your username" required autocomplete="username">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password <span class="required">*</span></label>
+            <div class="input-icon-wrap">
+              <span class="input-icon">🔒</span>
+              <input type="password" id="login-password" class="form-control" placeholder="Enter your password" required autocomplete="current-password">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full btn-lg" id="login-btn">
+            Sign In to Grant-X
+          </button>
+        </form>
+
+        <div style="margin-top:24px;padding:16px;background:var(--bg-secondary);border-radius:var(--radius);font-size:12px;color:var(--text-muted);line-height:1.8;">
+          <strong style="color:var(--text-secondary);">Demo Credentials:</strong><br>
+          🔴 Admin: <code>admin</code> / <code>admin</code> (or <code>admin123</code>)<br>
+          🟢 Student: <code>arjun.cs21</code> / <code>student123</code><br>
+          🔵 Faculty: <code>dr.priya</code> / <code>faculty123</code>
+        </div>
+
+        <button onclick="showPage('page-landing')" class="btn btn-outline btn-full mt-3" style="margin-top:16px;">← Back to Home</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE: STUDENT APPLICATION
+     ============================================================ -->
+<div class="page" id="page-student">
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="student-sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <div class="sidebar-logo-icon">🎯</div>
+          <div>
+            <div class="sidebar-logo-text">Grant-X</div>
+          </div>
+        </div>
+        <div class="sidebar-role-badge student">Student Portal</div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section-title">Navigation</div>
+        <div class="nav-item active" id="nav-s-dashboard" onclick="showStudentSection('dashboard')">
+          <span class="nav-item-icon">📊</span> Dashboard
+        </div>
+        <div class="nav-item" id="nav-s-submit" onclick="showStudentSection('submit')">
+          <span class="nav-item-icon">✏️</span> Submit Proposal
+        </div>
+        <div class="nav-item" id="nav-s-proposals" onclick="showStudentSection('proposals')">
+          <span class="nav-item-icon">📁</span> My Proposals
+        </div>
+        <div class="nav-item" id="nav-s-notifications" onclick="showStudentSection('notifications')">
+          <span class="nav-item-icon">🔔</span> Notifications
+          <span class="nav-item-badge hidden" id="s-notif-badge">0</span>
+        </div>
+        <div class="nav-item" id="nav-s-profile" onclick="showStudentSection('profile')">
+          <span class="nav-item-icon">👤</span> Profile
+        </div>
+        <div class="nav-item nav-logout" onclick="logout()" style="margin-top:12px;border-top:1px solid rgba(255,255,255,0.08);padding-top:12px;">
+          <span class="nav-item-icon">🚪</span> Log Out
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-profile-mini">
+          <div class="user-avatar" id="s-avatar">S</div>
+          <div class="user-info">
+            <div class="user-name" id="s-user-name">Student</div>
+            <div class="user-role">Student</div>
+          </div>
+          <button class="btn-logout" onclick="logout()" title="Logout">🚪 Logout</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <header class="topbar">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button class="topbar-mobile-toggle hidden" id="s-menu-toggle" onclick="toggleSidebar('student-sidebar')">☰</button>
+          <div>
+            <div class="topbar-title" id="student-page-title">Dashboard</div>
+            <div class="topbar-subtitle">Student Innovation Grant Portal</div>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button class="topbar-notif-btn" onclick="showStudentSection('notifications')" title="Notifications">
+            🔔
+            <span class="notif-badge hidden" id="s-topbar-notif-badge">0</span>
+          </button>
+          <button class="topbar-logout-btn" onclick="logout()" title="Logout to Home">
+            <span>🚪</span> Logout
+          </button>
+        </div>
+      </header>
+
+      <div class="content-area">
+        <!-- Dashboard Section -->
+        <div id="s-section-dashboard">
+          <div class="section-row">
+            <div>
+              <div class="page-title">Welcome back, <span id="s-welcome-name">Student</span>! 👋</div>
+              <div class="page-subtitle">Here's an overview of your grant activities.</div>
+            </div>
+            <button class="btn btn-primary" onclick="showStudentSection('submit')">+ New Proposal</button>
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="stats-grid" id="s-stats-grid">
+            <div class="stat-card blue">
+              <div class="stat-card-icon">📁</div>
+              <div class="stat-card-value" id="s-stat-total">—</div>
+              <div class="stat-card-label">Total Proposals</div>
+            </div>
+            <div class="stat-card purple">
+              <div class="stat-card-icon">📝</div>
+              <div class="stat-card-value" id="s-stat-draft">—</div>
+              <div class="stat-card-label">Draft</div>
+            </div>
+            <div class="stat-card cyan">
+              <div class="stat-card-icon">🔍</div>
+              <div class="stat-card-value" id="s-stat-review">—</div>
+              <div class="stat-card-label">Under Review</div>
+            </div>
+            <div class="stat-card green">
+              <div class="stat-card-icon">✅</div>
+              <div class="stat-card-value" id="s-stat-approved">—</div>
+              <div class="stat-card-label">Approved</div>
+            </div>
+            <div class="stat-card red">
+              <div class="stat-card-icon">❌</div>
+              <div class="stat-card-value" id="s-stat-rejected">—</div>
+              <div class="stat-card-label">Rejected</div>
+            </div>
+            <div class="stat-card orange">
+              <div class="stat-card-icon">💰</div>
+              <div class="stat-card-value" id="s-stat-funding">—</div>
+              <div class="stat-card-label">Funding Requested</div>
+            </div>
+          </div>
+
+          <!-- Recent Proposals -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">📋 My Proposals</div>
+              <button class="btn btn-secondary btn-sm" onclick="showStudentSection('proposals')">View All</button>
+            </div>
+            <div class="card-body" id="s-recent-proposals">
+              <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading proposals...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Proposal Section -->
+        <div id="s-section-submit" class="hidden">
+          <div class="section-row">
+            <div>
+              <div class="page-title">Submit New Proposal</div>
+              <div class="page-subtitle">Complete all steps to submit your innovation proposal.</div>
+            </div>
+            <button class="btn btn-outline" onclick="showStudentSection('dashboard')">← Back</button>
+          </div>
+          <div class="wizard-container">
+            <!-- Wizard Steps Indicator -->
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 32px;margin-bottom:24px;">
+              <div style="display:flex;align-items:flex-start;gap:0;" id="wizard-indicator">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <div class="wizard-body">
+              <!-- STEP 1: Team Details -->
+              <div class="wizard-step-content active" id="wizard-step-1">
+                <div class="wizard-step-title">👥 Student & Team Details</div>
+                <div class="wizard-step-desc">Enter the lead student information and add team members.</div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Student Name <span class="required">*</span></label>
+                    <input type="text" id="w-student-name" class="form-control" placeholder="Full name" value="">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Register Number <span class="required">*</span></label>
+                    <input type="text" id="w-reg-number" class="form-control" placeholder="e.g., 21CSBS042">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Department <span class="required">*</span></label>
+                    <input type="text" id="w-department" class="form-control" placeholder="e.g., CSBS">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Year of Study <span class="required">*</span></label>
+                    <select id="w-year" class="form-control">
+                      <option value="1">1st Year</option>
+                      <option value="2" selected>2nd Year</option>
+                      <option value="3">3rd Year</option>
+                      <option value="4">4th Year</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Email <span class="required">*</span></label>
+                    <input type="email" id="w-email" class="form-control" placeholder="student@aiht.ac.in">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" id="w-phone" class="form-control" placeholder="10-digit number">
+                  </div>
+                </div>
+
+                <div style="display:flex;align-items:center;justify-content:space-between;margin:20px 0 12px;">
+                  <div style="font-weight:700;font-size:15px;">👥 Team Members (Optional)</div>
+                  <button type="button" class="btn btn-secondary btn-sm" onclick="addTeamMember()">+ Add Member</button>
+                </div>
+                <div id="team-members-list" class="team-members-list">
+                  <!-- dynamically added -->
+                </div>
+              </div>
+
+              <!-- STEP 2: Innovation Proposal -->
+              <div class="wizard-step-content" id="wizard-step-2">
+                <div class="wizard-step-title">💡 Innovation Proposal Details</div>
+                <div class="wizard-step-desc">Describe your project idea in detail.</div>
+                <div class="form-group">
+                  <label class="form-label">Project Title <span class="required">*</span></label>
+                  <input type="text" id="w-title" class="form-control" placeholder="Enter a clear, descriptive project title">
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Innovation Category <span class="required">*</span></label>
+                    <select id="w-category" class="form-control">
+                      <option value="">Select category</option>
+                      <option>Artificial Intelligence & ML</option>
+                      <option>IoT & Embedded Systems</option>
+                      <option>Environmental Technology</option>
+                      <option>Healthcare & Biomedical</option>
+                      <option>Agriculture & Sustainability</option>
+                      <option>Robotics & Automation</option>
+                      <option>Cybersecurity</option>
+                      <option>Renewable Energy</option>
+                      <option>Smart Infrastructure</option>
+                      <option>Education Technology</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Technology / Domain <span class="required">*</span></label>
+                    <input type="text" id="w-tech-domain" class="form-control" placeholder="e.g., Machine Learning, IoT, Robotics">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Problem Statement <span class="required">*</span></label>
+                  <textarea id="w-problem" class="form-control" rows="4" placeholder="Clearly describe the problem your project addresses..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Proposed Solution <span class="required">*</span></label>
+                  <textarea id="w-solution" class="form-control" rows="4" placeholder="Describe your proposed solution in detail..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Abstract <span class="required">*</span></label>
+                  <textarea id="w-abstract" class="form-control" rows="4" placeholder="A comprehensive summary of your project..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Objectives <span class="required">*</span></label>
+                  <textarea id="w-objectives" class="form-control" rows="3" placeholder="List the key objectives of your project..."></textarea>
+                </div>
+              </div>
+
+              <!-- STEP 3: Novelty & Patent -->
+              <div class="wizard-step-content" id="wizard-step-3">
+                <div class="wizard-step-title">🔬 Novelty & Patent Potential</div>
+                <div class="wizard-step-desc">Describe the unique aspects of your innovation and patent potential.</div>
+                <div class="form-group">
+                  <label class="form-label">Existing Solutions</label>
+                  <textarea id="w-existing" class="form-control" rows="3" placeholder="What existing solutions already exist for this problem?"></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Novelty Explanation <span class="required">*</span></label>
+                  <textarea id="w-novelty" class="form-control" rows="4" placeholder="What makes your solution novel and unique?"></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Difference from Existing Solutions <span class="required">*</span></label>
+                  <textarea id="w-difference" class="form-control" rows="3" placeholder="How is your approach different from what exists?"></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Innovation Significance <span class="required">*</span></label>
+                  <textarea id="w-significance" class="form-control" rows="3" placeholder="Why is this innovation important? What impact will it have?"></textarea>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Patent Potential <span class="required">*</span></label>
+                    <select id="w-patent" class="form-control">
+                      <option value="HIGH">High — Strong patentable innovation</option>
+                      <option value="MEDIUM" selected>Medium — Some patentable aspects</option>
+                      <option value="LOW">Low — Limited patent potential</option>
+                      <option value="NONE">None — Not applicable</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group" style="margin-top:8px;">
+                  <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
+                    <input type="checkbox" id="w-declaration" style="margin-top:3px;accent-color:var(--primary);width:18px;height:18px;">
+                    <span style="font-size:14px;color:var(--text-secondary);">
+                      I hereby declare that the information provided is accurate and the innovation described is original. This work has not been submitted elsewhere for funding or patenting without disclosure.
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- STEP 4: Budget -->
+              <div class="wizard-step-content" id="wizard-step-4">
+                <div class="wizard-step-title">💰 Budget Breakdown</div>
+                <div class="wizard-step-desc">Provide a detailed budget. The total will be calculated automatically.</div>
+                <div class="budget-grid">
+                  <div class="form-group">
+                    <label class="form-label">Equipment Cost (₹)</label>
+                    <input type="number" id="b-equipment" class="form-control" value="0" min="0" oninput="updateBudgetTotal()">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Software / Licenses (₹)</label>
+                    <input type="number" id="b-software" class="form-control" value="0" min="0" oninput="updateBudgetTotal()">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Materials & Components (₹)</label>
+                    <input type="number" id="b-materials" class="form-control" value="0" min="0" oninput="updateBudgetTotal()">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Prototype Development (₹)</label>
+                    <input type="number" id="b-prototype" class="form-control" value="0" min="0" oninput="updateBudgetTotal()">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Testing & Validation (₹)</label>
+                    <input type="number" id="b-testing" class="form-control" value="0" min="0" oninput="updateBudgetTotal()">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Other Expenses (₹)</label>
+                    <input type="number" id="b-other" class="form-control" value="0" min="0" oninput="updateBudgetTotal()">
+                  </div>
+                </div>
+                <div class="budget-total-row">
+                  <div class="budget-total-label">Total Requested Funding</div>
+                  <div class="budget-total-value" id="budget-total-display">₹0</div>
+                </div>
+                <div class="form-group" style="margin-top:20px;">
+                  <label class="form-label">Budget Justification</label>
+                  <textarea id="b-justification" class="form-control" rows="3" placeholder="Briefly justify the budget requirements..."></textarea>
+                </div>
+              </div>
+
+              <!-- STEP 5: Review & Submit -->
+              <div class="wizard-step-content" id="wizard-step-5">
+                <div class="wizard-step-title">✅ Review & Submit</div>
+                <div class="wizard-step-desc">Review all information before submitting your proposal.</div>
+                <div id="wizard-review-content">
+                  <!-- Populated by JS -->
+                </div>
+                <div style="background:rgba(79,70,229,0.08);border:1px solid rgba(79,70,229,0.2);border-radius:var(--radius);padding:16px;margin-top:20px;">
+                  <div style="font-size:13px;color:var(--primary-light);font-weight:600;">⚠️ Important</div>
+                  <div style="font-size:13px;color:var(--text-secondary);margin-top:4px;">Once submitted, you cannot edit your proposal. Please review carefully. You can also save as draft to continue later.</div>
+                </div>
+              </div>
+
+              <!-- Wizard Footer -->
+              <div class="wizard-footer">
+                <button class="btn btn-outline" id="wizard-prev-btn" onclick="wizardPrev()" style="visibility:hidden;">← Previous</button>
+                <div style="display:flex;gap:12px;align-items:center;">
+                  <span style="font-size:13px;color:var(--text-muted);" id="wizard-step-info">Step 1 of 5</span>
+                  <button class="btn btn-secondary btn-sm" id="wizard-draft-btn" onclick="saveWizardDraft()">💾 Save Draft</button>
+                  <button class="btn btn-primary" id="wizard-next-btn" onclick="wizardNext()">Next →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- My Proposals Section -->
+        <div id="s-section-proposals" class="hidden">
+          <div class="section-row">
+            <div>
+              <div class="page-title">My Proposals</div>
+              <div class="page-subtitle">View and manage all your submitted proposals.</div>
+            </div>
+            <button class="btn btn-primary" onclick="showStudentSection('submit')">+ New Proposal</button>
+          </div>
+          <div id="s-proposals-list">
+            <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading...</div>
+          </div>
+        </div>
+
+        <!-- Proposal Detail Section -->
+        <div id="s-section-proposal-detail" class="hidden">
+          <div class="section-row">
+            <div>
+              <div class="page-title" id="s-detail-title">Proposal Detail</div>
+              <div class="page-subtitle" id="s-detail-number">—</div>
+            </div>
+            <button class="btn btn-outline" onclick="showStudentSection('proposals')">← Back to Proposals</button>
+          </div>
+          <div id="s-proposal-detail-content">
+            <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading proposal details...</div>
+          </div>
+        </div>
+
+        <!-- Notifications Section -->
+        <div id="s-section-notifications" class="hidden">
+          <div class="section-row">
+            <div>
+              <div class="page-title">Notifications</div>
+              <div class="page-subtitle">Stay updated on your proposal status.</div>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="markAllNotificationsRead('s')">Mark All Read</button>
+          </div>
+          <div class="card">
+            <div class="card-body" id="s-notifications-list">
+              <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading notifications...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div id="s-section-profile" class="hidden">
+          <div class="page-title" style="margin-bottom:24px;">My Profile</div>
+          <div class="card" style="max-width:600px;">
+            <div class="card-body" id="s-profile-content">
+              <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading profile...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE: FACULTY APPLICATION
+     ============================================================ -->
+<div class="page" id="page-faculty">
+  <div class="app-layout">
+    <aside class="sidebar" id="faculty-sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <div class="sidebar-logo-icon">🎯</div>
+          <div><div class="sidebar-logo-text">Grant-X</div></div>
+        </div>
+        <div class="sidebar-role-badge faculty">Faculty Evaluator</div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section-title">Navigation</div>
+        <div class="nav-item active" id="nav-f-dashboard" onclick="showFacultySection('dashboard')">
+          <span class="nav-item-icon">📊</span> Dashboard
+        </div>
+        <div class="nav-item" id="nav-f-assignments" onclick="showFacultySection('assignments')">
+          <span class="nav-item-icon">📋</span> Assigned Proposals
+        </div>
+        <div class="nav-item" id="nav-f-notifications" onclick="showFacultySection('notifications')">
+          <span class="nav-item-icon">🔔</span> Notifications
+          <span class="nav-item-badge hidden" id="f-notif-badge">0</span>
+        </div>
+        <div class="nav-item" id="nav-f-profile" onclick="showFacultySection('profile')">
+          <span class="nav-item-icon">👤</span> Profile
+        </div>
+        <div class="nav-item nav-logout" onclick="logout()" style="margin-top:12px;border-top:1px solid rgba(255,255,255,0.08);padding-top:12px;">
+          <span class="nav-item-icon">🚪</span> Log Out
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-profile-mini">
+          <div class="user-avatar" id="f-avatar">F</div>
+          <div class="user-info">
+            <div class="user-name" id="f-user-name">Faculty</div>
+            <div class="user-role">Faculty Evaluator</div>
+          </div>
+          <button class="btn-logout" onclick="logout()" title="Logout">🚪 Logout</button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <header class="topbar">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div>
+            <div class="topbar-title" id="faculty-page-title">Faculty Dashboard</div>
+            <div class="topbar-subtitle">Faculty Evaluation Portal</div>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button class="topbar-notif-btn" onclick="showFacultySection('notifications')" title="Notifications">
+            🔔
+            <span class="notif-badge hidden" id="f-topbar-notif-badge">0</span>
+          </button>
+          <button class="topbar-logout-btn" onclick="logout()" title="Logout to Home">
+            <span>🚪</span> Logout
+          </button>
+        </div>
+      </header>
+
+      <div class="content-area">
+        <!-- Faculty Dashboard -->
+        <div id="f-section-dashboard">
+          <div class="section-row">
+            <div>
+              <div class="page-title">Welcome, <span id="f-welcome-name">Faculty</span>! 👋</div>
+              <div class="page-subtitle">Review your assigned proposals for evaluation.</div>
+            </div>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card blue">
+              <div class="stat-card-icon">📋</div>
+              <div class="stat-card-value" id="f-stat-total">—</div>
+              <div class="stat-card-label">Total Assigned</div>
+            </div>
+            <div class="stat-card orange">
+              <div class="stat-card-icon">⏳</div>
+              <div class="stat-card-value" id="f-stat-pending">—</div>
+              <div class="stat-card-label">Pending Review</div>
+            </div>
+            <div class="stat-card green">
+              <div class="stat-card-icon">✅</div>
+              <div class="stat-card-value" id="f-stat-done">—</div>
+              <div class="stat-card-label">Reviews Done</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">📋 Assigned Proposals</div>
+            </div>
+            <div id="f-dashboard-assignments">
+              <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading assignments...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty Assignments -->
+        <div id="f-section-assignments" class="hidden">
+          <div class="page-title" style="margin-bottom:24px;">Assigned Proposals</div>
+          <div id="f-assignments-list">
+            <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading...</div>
+          </div>
+        </div>
+
+        <!-- Faculty Review Form -->
+        <div id="f-section-review" class="hidden">
+          <div class="section-row">
+            <div>
+              <div class="page-title">Proposal Evaluation</div>
+              <div class="page-subtitle" id="f-review-subtitle">Evaluating proposal</div>
+            </div>
+            <button class="btn btn-outline" onclick="showFacultySection('dashboard')">← Back</button>
+          </div>
+          <div id="f-review-content">
+            <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading review form...</div>
+          </div>
+        </div>
+
+        <!-- Faculty Notifications -->
+        <div id="f-section-notifications" class="hidden">
+          <div class="section-row">
+            <div><div class="page-title">Notifications</div></div>
+            <button class="btn btn-outline btn-sm" onclick="markAllNotificationsRead('f')">Mark All Read</button>
+          </div>
+          <div class="card">
+            <div class="card-body" id="f-notifications-list">
+              <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading notifications...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty Profile -->
+        <div id="f-section-profile" class="hidden">
+          <div class="page-title" style="margin-bottom:24px;">My Profile</div>
+          <div class="card" style="max-width:600px;">
+            <div class="card-body" id="f-profile-content">
+              <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading profile...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE: ADMIN APPLICATION
+     ============================================================ -->
+<div class="page" id="page-admin">
+  <div class="app-layout">
+    <aside class="sidebar" id="admin-sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <div class="sidebar-logo-icon">🎯</div>
+          <div><div class="sidebar-logo-text">Grant-X</div></div>
+        </div>
+        <div class="sidebar-role-badge admin">R&D Cell</div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section-title">Navigation</div>
+        <div class="nav-item active" id="nav-a-dashboard" onclick="showAdminSection('dashboard')">
+          <span class="nav-item-icon">📊</span> Dashboard
+        </div>
+        <div class="nav-item" id="nav-a-proposals" onclick="showAdminSection('proposals')">
+          <span class="nav-item-icon">📁</span> All Proposals
+        </div>
+        <div class="nav-item" id="nav-a-assign" onclick="showAdminSection('assign')">
+          <span class="nav-item-icon">👥</span> Assign Evaluators
+        </div>
+        <div class="nav-item" id="nav-a-reviews" onclick="showAdminSection('reviews')">
+          <span class="nav-item-icon">📋</span> Review Monitor
+        </div>
+        <div class="nav-item" id="nav-a-decisions" onclick="showAdminSection('decisions')">
+          <span class="nav-item-icon">⚖️</span> Grant Decisions
+        </div>
+        <div class="nav-item" id="nav-a-grants" onclick="showAdminSection('grants')">
+          <span class="nav-item-icon">💰</span> Grant Management
+        </div>
+        <div class="nav-item" id="nav-a-milestones" onclick="showAdminSection('milestones')">
+          <span class="nav-item-icon">🎯</span> Milestones
+        </div>
+        <div class="nav-item" id="nav-a-notifications" onclick="showAdminSection('notifications')">
+          <span class="nav-item-icon">🔔</span> Notifications
+          <span class="nav-item-badge hidden" id="a-notif-badge">0</span>
+        </div>
+        <div class="nav-item" id="nav-a-users" onclick="showAdminSection('users')">
+          <span class="nav-item-icon">👤</span> Users
+        </div>
+        <div class="nav-item nav-logout" onclick="logout()" style="margin-top:12px;border-top:1px solid rgba(255,255,255,0.08);padding-top:12px;">
+          <span class="nav-item-icon">🚪</span> Log Out
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-profile-mini">
+          <div class="user-avatar" id="a-avatar">A</div>
+          <div class="user-info">
+            <div class="user-name" id="a-user-name">Admin</div>
+            <div class="user-role">R&D Cell</div>
+          </div>
+          <button class="btn-logout" onclick="logout()" title="Logout">🚪 Logout</button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <header class="topbar">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div>
+            <div class="topbar-title" id="admin-page-title">R&D Dashboard</div>
+            <div class="topbar-subtitle">R&D Cell Administration Portal</div>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button class="topbar-notif-btn" onclick="showAdminSection('notifications')" title="Notifications">
+            🔔
+            <span class="notif-badge hidden" id="a-topbar-notif-badge">0</span>
+          </button>
+          <button class="topbar-logout-btn" onclick="logout()" title="Logout to Home">
+            <span>🚪</span> Logout
+          </button>
+        </div>
+      </header>
+
+      <div class="content-area">
+        <!-- Admin Dashboard -->
+        <div id="a-section-dashboard">
+          <div class="section-row">
+            <div>
+              <div class="page-title">R&D Committee Dashboard</div>
+              <div class="page-subtitle">Overview of all grant activities and proposal pipeline.</div>
+            </div>
+          </div>
+          <div class="stats-grid" id="a-stats-grid">
+            <div class="stat-card blue">
+              <div class="stat-card-icon">📁</div>
+              <div class="stat-card-value" id="a-stat-total">—</div>
+              <div class="stat-card-label">Total Proposals</div>
+            </div>
+            <div class="stat-card cyan">
+              <div class="stat-card-icon">📨</div>
+              <div class="stat-card-value" id="a-stat-new">—</div>
+              <div class="stat-card-label">New Submissions</div>
+            </div>
+            <div class="stat-card orange">
+              <div class="stat-card-icon">⏳</div>
+              <div class="stat-card-value" id="a-stat-awaiting">—</div>
+              <div class="stat-card-label">Awaiting Assignment</div>
+            </div>
+            <div class="stat-card purple">
+              <div class="stat-card-icon">🔍</div>
+              <div class="stat-card-value" id="a-stat-review">—</div>
+              <div class="stat-card-label">Under Review</div>
+            </div>
+            <div class="stat-card cyan">
+              <div class="stat-card-icon">⚖️</div>
+              <div class="stat-card-value" id="a-stat-pending-dec">—</div>
+              <div class="stat-card-label">Pending Decisions</div>
+            </div>
+            <div class="stat-card green">
+              <div class="stat-card-icon">✅</div>
+              <div class="stat-card-value" id="a-stat-approved">—</div>
+              <div class="stat-card-label">Approved Grants</div>
+            </div>
+            <div class="stat-card red">
+              <div class="stat-card-icon">❌</div>
+              <div class="stat-card-value" id="a-stat-rejected">—</div>
+              <div class="stat-card-label">Rejected</div>
+            </div>
+            <div class="stat-card orange">
+              <div class="stat-card-icon">💰</div>
+              <div class="stat-card-value" id="a-stat-funding-req">—</div>
+              <div class="stat-card-label">Total Requested</div>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">📋 Recent Proposals</div>
+              <button class="btn btn-secondary btn-sm" onclick="showAdminSection('proposals')">View All</button>
+            </div>
+            <div id="a-recent-proposals">
+              <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admin Proposals -->
+        <div id="a-section-proposals" class="hidden">
+          <div class="section-row">
+            <div><div class="page-title">All Proposals</div><div class="page-subtitle">Manage and review all submitted proposals.</div></div>
+          </div>
+          <div class="filter-bar">
+            <div class="search-input-wrap">
+              <span class="search-icon">🔍</span>
+              <input type="text" class="search-input" id="a-search" placeholder="Search proposals..." oninput="filterAdminProposals()">
+            </div>
+            <select class="filter-select" id="a-filter-status" onchange="filterAdminProposals()">
+              <option value="">All Statuses</option>
+              <option value="SUBMITTED">Submitted</option>
+              <option value="PENDING_EVALUATOR_ASSIGNMENT">Pending Assignment</option>
+              <option value="EVALUATORS_ASSIGNED">Evaluators Assigned</option>
+              <option value="UNDER_REVIEW">Under Review</option>
+              <option value="PENDING_GRANT_DECISION">Pending Decision</option>
+              <option value="APPROVED">Approved</option>
+              <option value="REJECTED">Rejected</option>
+              <option value="GRANT_SANCTIONED">Grant Sanctioned</option>
+              <option value="MILESTONE_TRACKING">Milestone Tracking</option>
+            </select>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Proposal #</th>
+                  <th>Title</th>
+                  <th>Student</th>
+                  <th>Department</th>
+                  <th>Status</th>
+                  <th>Score</th>
+                  <th>Budget (₹)</th>
+                  <th>Submitted</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="a-proposals-table">
+                <tr><td colspan="9"><div class="inline-loader"><div class="spinner spinner-sm"></div> Loading...</div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Proposal Detail (Admin) -->
+        <div id="a-section-proposal-detail" class="hidden">
+          <div class="section-row">
+            <div><div class="page-title" id="a-detail-title">Proposal Detail</div><div class="page-subtitle" id="a-detail-number">—</div></div>
+            <button class="btn btn-outline" onclick="showAdminSection('proposals')">← Back</button>
+          </div>
+          <div id="a-proposal-detail-content">
+            <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading...</div>
+          </div>
+        </div>
+
+        <!-- Assign Evaluators -->
+        <div id="a-section-assign" class="hidden">
+          <div class="section-row">
+            <div><div class="page-title">Assign Evaluators</div><div class="page-subtitle">Assign exactly two faculty evaluators to a proposal.</div></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;">
+            <!-- Proposal Selection -->
+            <div class="card">
+              <div class="card-header"><div class="card-title">📁 Select Proposal</div></div>
+              <div class="card-body">
+                <div id="assign-proposal-list">
+                  <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading proposals...</div>
+                </div>
+              </div>
+            </div>
+            <!-- Assignment Form -->
+            <div class="card" id="assign-form-card">
+              <div class="card-header"><div class="card-title">👥 Assign Evaluators</div></div>
+              <div class="card-body">
+                <div id="assign-form-content">
+                  <div class="empty-state">
+                    <div class="empty-state-icon">👈</div>
+                    <div class="empty-state-title">Select a Proposal</div>
+                    <div class="empty-state-desc">Choose a proposal from the left to assign evaluators.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Monitor -->
+        <div id="a-section-reviews" class="hidden">
+          <div class="section-row">
+            <div><div class="page-title">Review Monitor</div><div class="page-subtitle">Track evaluation progress across all proposals.</div></div>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Proposal</th>
+                  <th>Student</th>
+                  <th>Evaluator 1</th>
+                  <th>Score 1</th>
+                  <th>Evaluator 2</th>
+                  <th>Score 2</th>
+                  <th>Aggregated</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="a-reviews-table">
+                <tr><td colspan="8"><div class="inline-loader"><div class="spinner spinner-sm"></div> Loading...</div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Grant Decisions -->
+        <div id="a-section-decisions" class="hidden">
+          <div class="section-row">
+            <div><div class="page-title">Grant Decisions</div><div class="page-subtitle">Review proposals ready for decision.</div></div>
+          </div>
+          <div id="a-decisions-list">
+            <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading proposals ready for decision...</div>
+          </div>
+        </div>
+
+        <!-- Decision Detail -->
+        <div id="a-section-decision-detail" class="hidden">
+          <div class="section-row">
+            <div><div class="page-title">Make Grant Decision</div><div class="page-subtitle" id="a-decision-subtitle">—</div></div>
+            <button class="btn btn-outline" onclick="showAdminSection('decisions')">← Back</button>
+          </div>
+          <div id="a-decision-detail-content">
+            <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading...</div>
+          </div>
+        </div>
+
+        <!-- Grant Management -->
+        <div id="a-section-grants" class="hidden">
+          <div class="section-row">
+            <div><div class="page-title">Grant Management</div><div class="page-subtitle">Overview of all approved grants and funding.</div></div>
+          </div>
+          <div id="a-grants-list">
+            <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading grants...</div>
+          </div>
+        </div>
+
+        <!-- Milestones -->
+        <div id="a-section-milestones" class="hidden">
+          <div class="section-row">
+            <div><div class="page-title">Milestone Management</div><div class="page-subtitle">Create and track project milestones for approved proposals.</div></div>
+            <button class="btn btn-primary" onclick="openAddMilestoneModal()">+ Add Milestone</button>
+          </div>
+          <div id="a-milestones-list">
+            <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading proposals with milestones...</div>
+          </div>
+        </div>
+
+        <!-- Admin Notifications -->
+        <div id="a-section-notifications" class="hidden">
+          <div class="section-row">
+            <div><div class="page-title">Notifications</div></div>
+            <button class="btn btn-outline btn-sm" onclick="markAllNotificationsRead('a')">Mark All Read</button>
+          </div>
+          <div class="card">
+            <div class="card-body" id="a-notifications-list">
+              <div class="inline-loader"><div class="spinner spinner-sm"></div> Loading notifications...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Users -->
+        <div id="a-section-users" class="hidden">
+          <div class="section-row">
+            <div><div class="page-title">User Management</div><div class="page-subtitle">View all registered users.</div></div>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr><th>ID</th><th>Name</th><th>Username</th><th>Email</th><th>Role</th><th>Status</th></tr>
+              </thead>
+              <tbody id="a-users-table">
+                <tr><td colspan="6"><div class="inline-loader"><div class="spinner spinner-sm"></div> Loading...</div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MODALS
+     ============================================================ -->
+
+<!-- Decision Modal -->
+<div class="modal-overlay hidden" id="modal-decision">
+  <div class="modal modal-lg">
+    <div class="modal-header">
+      <div class="modal-title" id="decision-modal-title">Make Grant Decision</div>
+      <button class="modal-close" onclick="closeModal('modal-decision')">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="decision-proposal-id">
+      <div class="form-group">
+        <label class="form-label">Decision <span class="required">*</span></label>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;" id="decision-options">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:12px 20px;border:2px solid var(--border);border-radius:var(--radius);flex:1;min-width:140px;transition:var(--transition);" id="dec-opt-approve" onclick="selectDecision('APPROVED')">
+            <input type="radio" name="decision" value="APPROVED" style="accent-color:var(--success)"> <span>✅ Approve</span>
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:12px 20px;border:2px solid var(--border);border-radius:var(--radius);flex:1;min-width:140px;transition:var(--transition);" id="dec-opt-reject" onclick="selectDecision('REJECTED')">
+            <input type="radio" name="decision" value="REJECTED" style="accent-color:var(--danger)"> <span>❌ Reject</span>
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:12px 20px;border:2px solid var(--border);border-radius:var(--radius);flex:1;min-width:140px;transition:var(--transition);" id="dec-opt-revision" onclick="selectDecision('REVISION_REQUESTED')">
+            <input type="radio" name="decision" value="REVISION_REQUESTED" style="accent-color:var(--warning)"> <span>📝 Request Revision</span>
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Decision Remarks</label>
+        <textarea id="decision-remarks" class="form-control" rows="3" placeholder="Provide justification for your decision..."></textarea>
+      </div>
+      <div id="decision-approve-fields">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Approved Amount (₹) <span class="required">*</span></label>
+            <input type="number" id="decision-approved-amount" class="form-control" placeholder="Enter approved funding amount" min="0">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Grant Reference</label>
+            <input type="text" id="decision-grant-ref" class="form-control" placeholder="e.g., GX/2024/AI/001">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Sanction Date</label>
+            <input type="date" id="decision-sanction-date" class="form-control">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Project Phase</label>
+            <input type="text" id="decision-phase" class="form-control" placeholder="e.g., Phase 1: Prototype">
+          </div>
+        </div>
+      </div>
+      <div id="decision-revision-fields" class="hidden">
+        <div class="form-group">
+          <label class="form-label">Revision Comments <span class="required">*</span></label>
+          <textarea id="decision-revision-comments" class="form-control" rows="3" placeholder="Specify what needs to be revised..."></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-decision')">Cancel</button>
+      <button class="btn btn-primary" onclick="submitDecision()">Submit Decision</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Milestone Modal -->
+<div class="modal-overlay hidden" id="modal-milestone">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Add Project Milestone</div>
+      <button class="modal-close" onclick="closeModal('modal-milestone')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">Proposal <span class="required">*</span></label>
+        <select id="milestone-proposal-id" class="form-control">
+          <option value="">Select approved proposal...</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Milestone Title <span class="required">*</span></label>
+        <input type="text" id="milestone-title" class="form-control" placeholder="e.g., Prototype Development Phase">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <textarea id="milestone-desc" class="form-control" rows="3" placeholder="Describe what this milestone involves..."></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Due Date <span class="required">*</span></label>
+          <input type="date" id="milestone-due" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Status</label>
+          <select id="milestone-status" class="form-control">
+            <option value="NOT_STARTED">Not Started</option>
+            <option value="IN_PROGRESS">In Progress</option>
+            <option value="COMPLETED">Completed</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Completion % (0–100)</label>
+        <input type="number" id="milestone-completion" class="form-control" value="0" min="0" max="100">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-milestone')">Cancel</button>
+      <button class="btn btn-primary" onclick="submitMilestone()">Create Milestone</button>
+    </div>
+  </div>
+</div>
+
+<!-- Update Milestone Modal -->
+<div class="modal-overlay hidden" id="modal-milestone-update">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Update Milestone</div>
+      <button class="modal-close" onclick="closeModal('modal-milestone-update')">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="update-milestone-id">
+      <div class="form-group">
+        <label class="form-label">Status</label>
+        <select id="update-milestone-status" class="form-control">
+          <option value="NOT_STARTED">Not Started</option>
+          <option value="IN_PROGRESS">In Progress</option>
+          <option value="COMPLETED">Completed</option>
+          <option value="DELAYED">Delayed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Completion % (0–100)</label>
+        <input type="number" id="update-milestone-completion" class="form-control" value="0" min="0" max="100">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Remarks</label>
+        <textarea id="update-milestone-remarks" class="form-control" rows="3" placeholder="Add progress notes..."></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-milestone-update')">Cancel</button>
+      <button class="btn btn-primary" onclick="submitMilestoneUpdate()">Update Milestone</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
