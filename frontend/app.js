@@ -3,10 +3,13 @@
    AIHT CSBS-G11 | REST API Integration
    ============================================================ */
 
-// Target backend at http://localhost:8080/api when served locally or via file://
-const API_BASE = (window.location.protocol === 'file:' || (window.location.port && window.location.port !== '8080'))
-  ? 'http://localhost:8080/api'
-  : '/api';
+// Target backend at http://localhost:8080/api when served locally, via file://, or on GitHub Pages
+const API_BASE = (
+  window.location.protocol === 'file:' ||
+  window.location.hostname === 'localhost' ||
+  window.location.hostname === '127.0.0.1' ||
+  window.location.hostname.endsWith('github.io')
+) ? 'http://localhost:8080/api' : '/api';
 
 // ============================================================
 // STATE
