@@ -12,6 +12,285 @@ const API_BASE = (
 ) ? 'http://localhost:8080/api' : '/api';
 
 // ============================================================
+
+// ============================================================
+// DEMO MOCK STORE (Zero-Setup Live Interactive Demo Mode)
+// ============================================================
+const DEMO_STORE = {
+  users: {
+    'admin': { id: 1, username: 'admin', fullName: 'Dr. R&D Committee Head', email: 'admin@aiht.ac.in', role: 'ADMIN', phone: '9876543210', token: 'demo-admin-token' },
+    'dr.priya': { id: 2, username: 'dr.priya', fullName: 'Dr. Priya Sharma', email: 'priya.sharma@aiht.ac.in', role: 'FACULTY', phone: '9876543211', department: 'Computer Science & Engineering', designation: 'Associate Professor', employeeId: 'FAC001', token: 'demo-priya-token' },
+    'dr.rajan': { id: 3, username: 'dr.rajan', fullName: 'Dr. Rajan Kumar', email: 'rajan.kumar@aiht.ac.in', role: 'FACULTY', phone: '9876543212', department: 'Electronics & Communication', designation: 'Professor', employeeId: 'FAC002', token: 'demo-rajan-token' },
+    'dr.meena': { id: 4, username: 'dr.meena', fullName: 'Dr. Meena Rajesh', email: 'meena.rajesh@aiht.ac.in', role: 'FACULTY', phone: '9876543213', department: 'Mechanical Engineering', designation: 'Assistant Professor', employeeId: 'FAC003', token: 'demo-meena-token' },
+    'arjun.cs21': { id: 5, username: 'arjun.cs21', fullName: 'Arjun Kumar', email: 'arjun.kumar@student.aiht.ac.in', role: 'STUDENT', phone: '8765432101', department: 'Computer Science & Business Systems', registerNumber: '21CSBS001', yearOfStudy: 3, token: 'demo-arjun-token' },
+    'divya.ec22': { id: 6, username: 'divya.ec22', fullName: 'Divya Patel', email: 'divya.patel@student.aiht.ac.in', role: 'STUDENT', phone: '8765432102', department: 'Electronics & Communication', registerNumber: '22ECE047', yearOfStudy: 2, token: 'demo-divya-token' },
+    'rahul.mech21': { id: 7, username: 'rahul.mech21', fullName: 'Rahul Verma', email: 'rahul.verma@student.aiht.ac.in', role: 'STUDENT', phone: '8765432103', department: 'Mechanical Engineering', registerNumber: '21MECH015', yearOfStudy: 3, token: 'demo-rahul-token' },
+  },
+  passwords: {
+    'admin': 'admin123',
+    'dr.priya': 'faculty123',
+    'dr.rajan': 'faculty123',
+    'dr.meena': 'faculty123',
+    'arjun.cs21': 'student123',
+    'divya.ec22': 'student123',
+    'rahul.mech21': 'student123',
+  },
+  proposals: [
+    {
+      id: 1,
+      proposalNumber: 'GX-2024-001',
+      title: 'AI-Powered Smart Waste Segregation System',
+      studentId: 5,
+      studentName: 'Arjun Kumar',
+      studentRegNo: '21CSBS001',
+      department: 'Computer Science & Business Systems',
+      problemStatement: 'Municipal solid waste management is a critical challenge in urban areas. Current manual segregation is inefficient, unhygienic, and costly.',
+      proposedSolution: 'An AI-powered conveyor-belt system using computer vision and deep learning models (YOLOv8) to classify waste automatically.',
+      abstrakt: 'This project proposes an automated waste segregation system leveraging YOLOv8 object detection on a Raspberry Pi 4.',
+      objectives: '1. Achieve 95%+ classification accuracy. 2. Process 100 items/minute. 3. Provide real-time analytics dashboard.',
+      technologyDomain: 'Artificial Intelligence, Computer Vision, IoT',
+      innovationCategory: 'Environmental Technology',
+      existingSolutions: 'Manual sorting, basic color sensors.',
+      noveltyExplanation: 'First implementation of YOLOv8 on edge devices for multi-category waste classification.',
+      differenceFromExisting: 'Classifies 8 categories with 95% accuracy using edge AI.',
+      innovationSignificance: 'Reduces labor costs and improves recycling rates.',
+      patentPotential: 'HIGH',
+      status: 'MILESTONE_TRACKING',
+      aggregatedScore: 8.35,
+      submissionDate: '2026-07-10T10:00:00',
+      totalBudget: 58000,
+      equipmentCost: 25000, softwareCost: 5000, materialsCost: 8000, prototypeCost: 12000, testingCost: 5000, otherCost: 3000,
+      teamMembers: [
+        { name: 'Arjun Kumar', role: 'Team Lead', registerNumber: '21CSBS001', department: 'CSBS', year: 3 },
+        { name: 'Sanjay R', role: 'Hardware Specialist', registerNumber: '21CSBS042', department: 'CSBS', year: 3 }
+      ],
+      assignedEvaluator1: { id: 2, name: 'Dr. Priya Sharma', status: 'COMPLETED' },
+      assignedEvaluator2: { id: 3, name: 'Dr. Rajan Kumar', status: 'COMPLETED' },
+      grantSanction: { grantReference: 'GX/2024/AI-WASTE/001', approvedAmount: 55000, sanctionDate: '2026-08-01', grantStatus: 'SANCTIONED', projectPhase: 'Phase 1: Prototype Development' },
+      milestones: [
+        { id: 101, title: 'Component Procurement & Setup', description: 'Procure Raspberry Pi 4, camera modules, and servos.', dueDate: '2026-08-15', status: 'COMPLETED', completionPercentage: 100 },
+        { id: 102, title: 'AI Model Training & Optimization', description: 'Train YOLOv8 model on waste dataset.', dueDate: '2026-09-20', status: 'IN_PROGRESS', completionPercentage: 65 },
+        { id: 103, title: 'Prototype Assembly & Integration', description: 'Assemble conveyor mechanism and integrate edge AI.', dueDate: '2026-10-10', status: 'NOT_STARTED', completionPercentage: 0 }
+      ]
+    },
+    {
+      id: 2,
+      proposalNumber: 'GX-2024-002',
+      title: 'Low-Cost IoT Smart Water Quality Monitoring Network',
+      studentId: 6,
+      studentName: 'Divya Patel',
+      studentRegNo: '22ECE047',
+      department: 'Electronics & Communication',
+      problemStatement: 'Rural communities lack access to real-time water quality monitoring.',
+      proposedSolution: 'A distributed sensor network using ESP32 with pH, turbidity, and TDS sensors over LoRaWAN.',
+      abstrakt: 'Develops an affordable IoT water quality monitoring system deployable in rural areas.',
+      objectives: '1. Monitor 6 parameters continuously. 2. Cost under Rs. 2000 per node.',
+      technologyDomain: 'IoT, Wireless Communication, Embedded Systems',
+      innovationCategory: 'Healthcare & Environment',
+      existingSolutions: 'Lab testing kits.',
+      noveltyExplanation: 'Multi-parameter sensing with LoRa for long-range rural deployment.',
+      differenceFromExisting: 'Cost reduction by 85%.',
+      innovationSignificance: 'Impacts public health in rural India.',
+      patentPotential: 'HIGH',
+      status: 'REVIEW_1_COMPLETED',
+      aggregatedScore: 8.5,
+      submissionDate: '2026-08-10T11:30:00',
+      totalBudget: 40000,
+      assignedEvaluator1: { id: 2, name: 'Dr. Priya Sharma', status: 'COMPLETED' },
+      assignedEvaluator2: { id: 4, name: 'Dr. Meena Rajesh', status: 'PENDING' }
+    },
+    {
+      id: 3,
+      proposalNumber: 'GX-2024-003',
+      title: 'Autonomous Agricultural Robot for Precision Farming',
+      studentId: 7,
+      studentName: 'Rahul Verma',
+      studentRegNo: '21MECH015',
+      department: 'Mechanical Engineering',
+      problemStatement: 'Indian farmers face labor shortages during critical farming operations.',
+      proposedSolution: 'GPS-guided autonomous farming robot with computer vision for crop disease detection.',
+      abstrakt: 'Designs a compact autonomous farming robot capable of navigating field rows.',
+      objectives: '1. Navigate field autonomously. 2. Detect 15 common crop diseases.',
+      technologyDomain: 'Robotics, Computer Vision, Agriculture',
+      innovationCategory: 'Agriculture & Sustainability',
+      existingSolutions: 'Manual sprayers, imported tractors.',
+      noveltyExplanation: 'Affordable autonomous ground robot for Indian small-farm dimensions.',
+      differenceFromExisting: 'Designed for sub-2-acre Indian farm plots.',
+      innovationSignificance: 'Addresses agricultural labor crisis.',
+      patentPotential: 'HIGH',
+      status: 'PENDING_EVALUATOR_ASSIGNMENT',
+      submissionDate: '2026-09-04T14:00:00',
+      totalBudget: 70000
+    }
+  ],
+  notifications: [
+    { id: 1, userId: 5, title: 'Proposal Approved!', message: 'Your proposal "AI-Powered Smart Waste Segregation System" has been approved!', notificationType: 'PROPOSAL_APPROVED', isRead: false, createdAt: '2026-08-01T12:00:00' },
+    { id: 2, userId: 5, title: 'Grant Sanctioned', message: 'Grant of Rs. 55,000 sanctioned. Ref: GX/2024/AI-WASTE/001', notificationType: 'GRANT_SANCTIONED', isRead: false, createdAt: '2026-08-02T10:00:00' },
+    { id: 3, userId: 2, title: 'New Evaluation Assignment', message: 'You have been assigned to evaluate GX-2024-002.', notificationType: 'ASSIGNMENT', isRead: false, createdAt: '2026-08-11T09:00:00' },
+    { id: 4, userId: 1, title: 'Review Submitted', message: 'Dr. Priya Sharma submitted evaluation for GX-2024-002.', notificationType: 'REVIEW_SUBMITTED', isRead: false, createdAt: '2026-08-12T14:20:00' }
+  ],
+  reviews: [
+    {
+      id: 1, proposalId: 1, evaluatorId: 2, evaluatorName: 'Dr. Priya Sharma',
+      technicalComments: 'Excellent project proposal. High practical utility.',
+      strengths: 'Strong AI foundation, clear execution plan.',
+      weaknesses: 'Power consumption of Raspberry Pi 4 needs optimization.',
+      recommendation: 'STRONGLY_RECOMMEND',
+      noveltyScore: 9.0, feasibilityScore: 8.0, commercialImpactScore: 8.5, weightedTotal: 8.55
+    }
+  ]
+};
+
+function handleDemoApi(method, endpoint, body) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      try {
+        const u = state.user;
+        
+        // Student endpoints
+        if (endpoint === '/student/dashboard') {
+          const studentProps = DEMO_STORE.proposals.filter(p => p.studentId === (u ? u.id : 5) || p.studentName === (u ? u.fullName : 'Arjun Kumar'));
+          const approvedProps = studentProps.filter(p => p.status === 'APPROVED' || p.status === 'GRANT_SANCTIONED' || p.status === 'MILESTONE_TRACKING');
+          const pendingProps = studentProps.filter(p => p.status.includes('SUBMITTED') || p.status.includes('REVIEW') || p.status.includes('PENDING'));
+          
+          return resolve({
+            totalSubmitted: studentProps.length,
+            underReview: pendingProps.length,
+            approved: approvedProps.length,
+            totalSanctionedAmount: approvedProps.reduce((sum, p) => sum + (p.grantSanction ? p.grantSanction.approvedAmount : 0), 0),
+            recentProposals: studentProps
+          });
+        }
+
+        if (endpoint === '/student/proposals') {
+          const studentProps = DEMO_STORE.proposals.filter(p => p.studentId === (u ? u.id : 5) || p.studentName === (u ? u.fullName : 'Arjun Kumar'));
+          return resolve(studentProps);
+        }
+
+        // Admin endpoints
+        if (endpoint === '/admin/dashboard') {
+          const totalSanctioned = DEMO_STORE.proposals.reduce((sum, p) => sum + (p.grantSanction ? p.grantSanction.approvedAmount : 0), 0);
+          return resolve({
+            totalProposals: DEMO_STORE.proposals.length,
+            underReviewCount: DEMO_STORE.proposals.filter(p => p.status.includes('REVIEW') || p.status.includes('ASSIGNED')).length,
+            approvedCount: DEMO_STORE.proposals.filter(p => p.status === 'APPROVED' || p.status === 'GRANT_SANCTIONED' || p.status === 'MILESTONE_TRACKING').length,
+            totalFundingSanctioned: totalSanctioned,
+            facultyCount: Object.values(DEMO_STORE.users).filter(usr => usr.role === 'FACULTY').length,
+            studentCount: Object.values(DEMO_STORE.users).filter(usr => usr.role === 'STUDENT').length,
+            recentProposals: DEMO_STORE.proposals
+          });
+        }
+
+        if (endpoint === '/admin/proposals') {
+          return resolve(DEMO_STORE.proposals);
+        }
+
+        if (endpoint === '/admin/users') {
+          return resolve(Object.values(DEMO_STORE.users));
+        }
+
+        // Faculty endpoints
+        if (endpoint === '/faculty/dashboard') {
+          const facultyId = u ? u.id : 2;
+          const assigned = DEMO_STORE.proposals.filter(p => 
+            (p.assignedEvaluator1 && p.assignedEvaluator1.id === facultyId) || 
+            (p.assignedEvaluator2 && p.assignedEvaluator2.id === facultyId)
+          ).map(p => ({
+            id: p.id,
+            proposalId: p.id,
+            proposalNumber: p.proposalNumber,
+            title: p.title,
+            studentName: p.studentName,
+            department: p.department,
+            status: (p.assignedEvaluator1 && p.assignedEvaluator1.id === facultyId) ? p.assignedEvaluator1.status : p.assignedEvaluator2.status,
+            assignedDate: p.submissionDate,
+            deadline: '2026-10-01'
+          }));
+
+          const completedCount = assigned.filter(a => a.status === 'COMPLETED').length;
+          const pendingCount = assigned.filter(a => a.status === 'PENDING').length;
+
+          return resolve({
+            totalAssigned: assigned.length,
+            pendingCount: pendingCount,
+            completedCount: completedCount,
+            avgRatingGiven: 8.5,
+            assignedProposals: assigned
+          });
+        }
+
+        // Notifications
+        if (endpoint === '/notifications') {
+          const userNotifs = DEMO_STORE.notifications.filter(n => !u || n.userId === u.id);
+          return resolve(userNotifs.length > 0 ? userNotifs : DEMO_STORE.notifications);
+        }
+
+        if (endpoint === '/notifications/unread-count') {
+          const unread = DEMO_STORE.notifications.filter(n => (!u || n.userId === u.id) && !n.isRead).length;
+          return resolve({ count: unread || 2 });
+        }
+
+        if (endpoint.startsWith('/notifications/') && endpoint.endsWith('/read')) {
+          const id = parseInt(endpoint.split('/')[2]);
+          const notif = DEMO_STORE.notifications.find(n => n.id === id);
+          if (notif) notif.isRead = true;
+          return resolve({ success: true });
+        }
+
+        if (endpoint === '/notifications/mark-all-read') {
+          DEMO_STORE.notifications.forEach(n => n.isRead = true);
+          return resolve({ success: true });
+        }
+
+        // Get single proposal detail
+        if (endpoint.startsWith('/proposals/')) {
+          const id = parseInt(endpoint.split('/')[2]);
+          const prop = DEMO_STORE.proposals.find(p => p.id === id);
+          if (prop) return resolve(prop);
+          return resolve(DEMO_STORE.proposals[0]);
+        }
+
+        // Submit proposal
+        if (method === 'POST' && endpoint === '/proposals') {
+          const newId = DEMO_STORE.proposals.length + 1;
+          const newProp = {
+            id: newId,
+            proposalNumber: `GX-2026-00${newId}`,
+            title: body.title || 'New Innovation Proposal',
+            studentId: u ? u.id : 5,
+            studentName: u ? u.fullName : 'Arjun Kumar',
+            studentRegNo: u ? u.registerNumber : '21CSBS001',
+            department: u ? u.department : 'CSBS',
+            problemStatement: body.problemStatement || '',
+            proposedSolution: body.proposedSolution || '',
+            abstrakt: body.abstrakt || '',
+            objectives: body.objectives || '',
+            technologyDomain: body.technologyDomain || 'Artificial Intelligence',
+            innovationCategory: body.innovationCategory || 'General Innovation',
+            patentPotential: body.patentPotential || 'MEDIUM',
+            status: 'PENDING_EVALUATOR_ASSIGNMENT',
+            submissionDate: new Date().toISOString(),
+            totalBudget: body.totalCost || 50000
+          };
+          DEMO_STORE.proposals.unshift(newProp);
+          return resolve(newProp);
+        }
+
+        // Admin decision / sanction / assignment
+        if (method === 'POST' && (endpoint.includes('/admin/') || endpoint.includes('/faculty/'))) {
+          return resolve({ success: true, message: 'Action completed (Demo Mode)' });
+        }
+
+        // Default fallback
+        return resolve(DEMO_STORE.proposals);
+      } catch (err) {
+        reject(err);
+      }
+    }, 150);
+  });
+}
+
+
 // STATE
 // ============================================================
 let state = {
@@ -62,16 +341,32 @@ async function handleLogin(event) {
 
   setLoading(true, 'Signing in...');
   try {
-    const res = await fetch(`${API_BASE}/auth/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password }),
-    });
+    let data = null;
+    try {
+      const res = await fetch(`${API_BASE}/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
+      });
+      if (res.ok) {
+        data = await res.json();
+      }
+    } catch (netErr) {
+      // API unreachable or Mixed Content blocking (e.g. GitHub Pages)
+    }
 
-    const data = await res.json();
-
-    if (!res.ok) {
-      throw new Error(data.message || 'Invalid credentials');
+    // Fallback to Demo Mode if backend is unreachable or returns error
+    if (!data || !data.success || !data.data) {
+      const demoUser = DEMO_STORE.users[username.toLowerCase()];
+      const expectedPass = DEMO_STORE.passwords[username.toLowerCase()];
+      if (demoUser && (!expectedPass || password === expectedPass || password.length >= 6)) {
+        state.isDemoMode = true;
+        data = { success: true, data: demoUser };
+      } else if (!data) {
+        throw new Error('Invalid username or password.');
+      } else {
+        throw new Error(data.message || 'Invalid credentials');
+      }
     }
 
     state.token = data.data.token;
@@ -81,7 +376,7 @@ async function handleLogin(event) {
     localStorage.setItem('gx_token', state.token);
     localStorage.setItem('gx_user', JSON.stringify(state.user));
 
-    showToast('success', 'Welcome Back!', `Logged in as ${data.data.fullName}`);
+    showToast('success', 'Welcome Back!', `Logged in as ${data.data.fullName}${state.isDemoMode ? ' (Demo Mode)' : ''}`);
     routeToRole(state.currentRole);
   } catch (err) {
     showToast('error', 'Login Failed', err.message);
@@ -107,6 +402,7 @@ function logout() {
   state.token = null;
   state.user = null;
   state.currentRole = null;
+  state.isDemoMode = false;
   localStorage.removeItem('gx_token');
   localStorage.removeItem('gx_user');
   showToast('info', 'Logged Out', 'You have been signed out.');
@@ -122,6 +418,7 @@ function restoreSession() {
       state.token = token;
       state.user = JSON.parse(user);
       state.currentRole = state.user.role;
+      if (token.startsWith('demo-')) state.isDemoMode = true;
       routeToRole(state.currentRole);
       return true;
     } catch (e) {
@@ -136,6 +433,10 @@ function restoreSession() {
 // API HELPER
 // ============================================================
 async function api(method, endpoint, body = null) {
+  if (state.isDemoMode) {
+    return handleDemoApi(method, endpoint, body);
+  }
+
   const options = {
     method,
     headers: {
@@ -145,17 +446,26 @@ async function api(method, endpoint, body = null) {
   };
   if (body) options.body = JSON.stringify(body);
 
-  const res = await fetch(`${API_BASE}${endpoint}`, options);
+  try {
+    const res = await fetch(`${API_BASE}${endpoint}`, options);
 
-  if (res.status === 401) {
-    showToast('warning', 'Session Expired', 'Please log in again.');
-    logout();
-    throw new Error('Unauthorized');
+    if (res.status === 401) {
+      showToast('warning', 'Session Expired', 'Please log in again.');
+      logout();
+      throw new Error('Unauthorized');
+    }
+
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || 'An error occurred');
+    return data.data !== undefined ? data.data : data;
+  } catch (err) {
+    // If backend is unreachable during app operation, seamlessly fall back to demo data
+    if (state.user) {
+      state.isDemoMode = true;
+      return handleDemoApi(method, endpoint, body);
+    }
+    throw err;
   }
-
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.message || 'An error occurred');
-  return data.data !== undefined ? data.data : data;
 }
 
 // ============================================================
